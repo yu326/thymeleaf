@@ -1,0 +1,19 @@
+html, body {
+    font-size: 18px;
+    /*overflow-x: hidden;*/
+    background: #eee;
+    height: 100%;
+    /* ont-family: 'Muli', sans-serif; */
+    font-family: "Microsoft YaHei" ! important;
+    margin: 0 auto;
+    width: 70%;
+
+}
+
+.header, .footer {
+    color: #39C5BB;
+    font-size: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: gray
+}

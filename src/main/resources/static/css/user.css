@@ -1,0 +1,23 @@
+html, body {
+    font-size: 18px;
+    /*overflow-x: hidden;*/
+    background: #eee;
+    height: 100%;
+    /* ont-family: 'Muli', sans-serif; */
+    font-family: "Microsoft YaHei" ! important;
+    margin: 0 auto;
+    width: 70%;
+
+}
+.userShow{
+    background: #39C5BB;
+}
+
+.blackdivider{
+    height:2px;
+    width:100%;
+    background:black;
+    overflow:hidden;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}

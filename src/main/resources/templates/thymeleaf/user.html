@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>用户信息展示页面</title>
+    <link rel="stylesheet" href="/css/user.css"/>
+</head>
+<body>
+<div class="userShow">
+    <h1> 用户信息展示</h1>
+    <div class="blackdivider"></div>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>desc</th>
+            <th>time</th>
+
+        </tr>
+        <tr th:each="user:${userList}"><!--循环userList,以person作为形参-->
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.name}"></td>
+            <td th:utext="${user.desc}"></td>
+            <td th:text="${#dates.format(user.date,'yyyy-MM-dd hh:mm:ss')}"></td>
+        </tr>
+    </table>
+</div>
+<div class="addUser">
+    <h1>form表单提交示例</h1>
+    <div class="blackdivider"></div>
+    <form th:action="@{/addUser}" th:method="post" th:object="${userEntity}">
+        <!-- 第一种写法 -->
+        <!--用户id:<input type="text" th:field="*{id}"><br/>-->
+        <!--用户名:<input type="text" th:field="*{name}"><br/>-->
+        <!--用户简介:<input type="text" th:field="*{desc}"><br/>-->
+        <!-- 第二种写法 -->
+        用户id:<input type="text" th:value="${userEntity.id}" name="id"><br/>
+        用户名:<input type="text" th:value="${userEntity.name}" name="name"><br/>
+        用户简介:<input type="text" th:value="${userEntity.desc}" name="desc"><br/>
+        <input type="submit" value="提交">
+    </form>
+
+</div>
+
+
+</body>
+</html>
